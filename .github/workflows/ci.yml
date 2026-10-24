@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx expo install --check
+      - run: npm run doctor
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test -- --ci --coverage --runInBand
+      - run: npx expo prebuild --no-install --platform android
+      - run: npx expo export --platform android --output-dir dist --max-workers 2
