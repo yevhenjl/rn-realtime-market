@@ -6,7 +6,7 @@
 
 | ID | P | Что | Где | Как гасить | Когда / задача | Статус |
 |---|---|---|---|---|---|---|
-| TD-01 | P1 | `AGENTS.md`: «expo-updates — no updates config in app.json yet», а в `app.json` есть `updates.url` и `runtimeVersion` | `AGENTS.md`, `app.json` | поправить строку в `AGENTS.md` | W0 · S0.3 | ⬜ |
+| TD-01 | P1 | `AGENTS.md`: «expo-updates — no updates config in app.json yet», а в `app.json` есть `updates.url` и `runtimeVersion` | `AGENTS.md`, `app.json` | поправить строку в `AGENTS.md` | W0 · S0.3 | ✅ |
 | TD-02 | P2 | Ассеты шаблона не используются: `react-logo*`, `expo-badge*`, `expo-logo`, `logo-glow`, `tutorial-web`, `tabIcons/*` | `assets/images/` | удалить после того, как экран списка заменит заглушку | W5 · S9.1 | ⬜ |
 | TD-03 | P1 | Числа в `Binance_Live.md` расходятся с тестами курса: heartbeat probe 5 с vs 10 с; backoff base 1 с vs 500 мс | `Binance_Live.md`, т6.p5 | агент составляет таблицу расхождений; выбор и правку делает ученик в design doc (D-003) | W1 · S1.4 | ⬜ |
 | TD-04 | P2 | ADR 0003 не написан: курс — «без Vulkan», репо — Skia Graphite + Vulkan 1.1, minSdk 26 | `docs/adr/` | ADR пишет ученик | W1 · S1.2 | ⬜ |
