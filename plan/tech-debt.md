@@ -16,6 +16,7 @@
 | TD-08 | P3 | Установлены, но не используются: `expo-widgets` (лишний iOS-target), `expo-secure-store`, `expo-linear-gradient`, `react-native-keyboard-controller` | `package.json`, `app.json` | не трогать до S9 (стек закреплён); на S9 решить: оставить с объяснением в README или удалить + пересобрать dev build | W6 · S9.2 | ⬜ |
 | TD-09 | P2 | `src/test/home.test.tsx` проверяет текст заглушки — сломается при замене экрана | `src/test/` | заменить эквивалентным тестом списка, не ослабляя (D-006) | W4 · S6.2 | ⬜ |
 | TD-10 | P3 | iOS deployment target явно не задан, NFR-14 требует 16.4+ | `app.json` → `expo-build-properties` | проверить дефолт SDK 58 после prebuild; если ниже — задать `ios.deploymentTarget` | W6 · S8.2 | ⬜ |
+| TD-13 | P1 | CI красный: 18 пакетов отстали от патч-версий Expo 58 (`expo install --check`), дубли `expo-constants` в `node_modules` (doctor) | `package.json`, `bun.lock`, `app.json` | `bunx expo install --fix`, `bun update @react-native/jest-preset`, чистая переустановка (D-011) | PR #1 | ✅ |
 | TD-12 | P3 | `Binance_Live.md` откладывает смену интервала, план её включает (D-007) | `Binance_Live.md` → «★-пункты» | строка «Смена интервала» → «Решить» (агент, по просьбе пользователя) | W7 · до G3 | ✅ |
 | TD-11 | P3 | `README.md` — заглушка этапа 0 | `README*.md` | шаблон т6.p9 | W5–W6 · S9.0, S9.2 | ⬜ |
 
