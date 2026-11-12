@@ -2,11 +2,11 @@
 
 **EN** · [RU](README.ru.md)
 
-Learning project from [training 6](../training/06-websocket-demo-binance/06-websocket-demo-binance.md): Expo, public Binance market data and Skia charts. The current scope is the stage 0 scaffold; live quotes and charts are not implemented yet.
+Learning project from [training 6](training/06-websocket-demo-binance/06-websocket-demo-binance.md): Expo, public Binance market data and Skia charts. The current scope is the stage 0 scaffold; live quotes and charts are not implemented yet.
 
 ## Stack
 
-Expo SDK 58, React Native 0.88, React 19.3, TypeScript 6; development builds and CNG. Styling uses Uniwind 1.13 + Tailwind CSS 4; graphics use react-native-skia 2.15.1, Reanimated 4.7 and Gesture Handler 3.3. Zustand, TanStack Query, Zod, FlashList and NetInfo are installed. Exact versions live in package.json and package-lock.json.
+Expo SDK 58, React Native 0.88, React 19.3, TypeScript 6; development builds and CNG. Styling uses Uniwind 1.13 + Tailwind CSS 4; graphics use react-native-skia 3.7.4 (Graphite; Android 8.0+ / API 26 with Vulkan 1.1), Reanimated 4.7 and Gesture Handler 3.3. Zustand, TanStack Query, Zod, FlashList and NetInfo are installed. Exact versions live in package.json and bun.lock.
 
 ## Install and check
 
@@ -14,13 +14,13 @@ Use Node 24, as specified in .nvmrc.
 
 ```sh
 nvm use
-npm ci
-npm run check
-npx expo install --check
-npm run doctor
+bun install --frozen-lockfile
+bun run check
+bunx expo install --check
+bun run doctor
 ```
 
-`npm run check` generates Uniwind types, checks TypeScript and ESLint, then runs Jest. The starter screen test does not call Binance. For coverage: `npm test -- --ci --coverage --runInBand`.
+`bun run check` generates Uniwind types, checks TypeScript and ESLint, then runs Jest. The starter screen test does not call Binance. For coverage: `bun run test -- --ci --coverage --runInBand`.
 
 ## Development build
 
@@ -28,10 +28,10 @@ The app requires its own development build. EAS profiles are configured; no clou
 
 ```sh
 # Locally, with the Android SDK and a device already configured:
-npm run android
+bun run android
 
 # Once the development build is installed, run Metro only:
-npm start
+bun start
 ```
 
 For a cloud build after linking your Expo project yourself: `eas build -p android --profile development`. The `development-simulator` profile targets iOS Simulator, `preview` produces a release APK for measurements, and `production` targets stores.
@@ -49,7 +49,7 @@ The Mac described in the training cannot build iOS SDK 58 locally; use a compati
 - docs/adr and docs/media — future ADRs and demo media.
 - AGENTS.md and CLAUDE.md — project rules: you write the core, AI explains and reviews.
 
-Next: [stage 1, system design](../training/06-websocket-demo-binance/06-websocket-demo-binance-part3.md) and four ADRs before implementing the core. Core test specifications remain in the training and are added in their respective stages.
+Next: [stage 1, system design](training/06-websocket-demo-binance/06-websocket-demo-binance-part3.md) and four ADRs before implementing the core. Core test specifications remain in the training and are added in their respective stages.
 
 ## Git and CI
 

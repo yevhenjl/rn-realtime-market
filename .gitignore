@@ -52,3 +52,5 @@ NOTES.md
 *.apk
 *.aab
 *.ipa
+
+.claude/settings.local.json

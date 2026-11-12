@@ -2,11 +2,11 @@
 
 [EN](README.en.md) · **RU**
 
-Учебный проект по [тренингу 6](../training/06-websocket-demo-binance/06-websocket-demo-binance.md): Expo, публичные рыночные данные Binance и графики Skia. Сейчас подготовлен каркас этапа 0; котировки и графики ещё не реализованы.
+Учебный проект по [тренингу 6](training/06-websocket-demo-binance/06-websocket-demo-binance.md): Expo, публичные рыночные данные Binance и графики Skia. Сейчас подготовлен каркас этапа 0; котировки и графики ещё не реализованы.
 
 ## Стек
 
-Expo SDK 58, React Native 0.88, React 19.3, TypeScript 6; development build и CNG. Стили — Uniwind 1.13 + Tailwind CSS 4, графика — react-native-skia 2.15.1, Reanimated 4.7 и Gesture Handler 3.3. Также установлены Zustand, TanStack Query, Zod, FlashList и NetInfo. Точные версии — package.json и package-lock.json.
+Expo SDK 58, React Native 0.88, React 19.3, TypeScript 6; development build и CNG. Стили — Uniwind 1.13 + Tailwind CSS 4, графика — react-native-skia 3.7.4 (Graphite; Android 8.0+ / API 26 с Vulkan 1.1), Reanimated 4.7 и Gesture Handler 3.3. Также установлены Zustand, TanStack Query, Zod, FlashList и NetInfo. Точные версии — package.json и bun.lock.
 
 ## Установка и проверки
 
@@ -14,13 +14,13 @@ Expo SDK 58, React Native 0.88, React 19.3, TypeScript 6; development build и C
 
 ```sh
 nvm use
-npm ci
-npm run check
-npx expo install --check
-npm run doctor
+bun install --frozen-lockfile
+bun run check
+bunx expo install --check
+bun run doctor
 ```
 
-`npm run check` генерирует типы Uniwind, проверяет TypeScript и ESLint, запускает Jest. Тест стартового экрана не обращается к Binance. Для покрытия: `npm test -- --ci --coverage --runInBand`.
+`bun run check` генерирует типы Uniwind, проверяет TypeScript и ESLint, запускает Jest. Тест стартового экрана не обращается к Binance. Для покрытия: `bun run test -- --ci --coverage --runInBand`.
 
 ## Development build
 
@@ -28,10 +28,10 @@ npm run doctor
 
 ```sh
 # Локально, если Android SDK и устройство уже настроены:
-npm run android
+bun run android
 
 # После установки development build — только Metro:
-npm start
+bun start
 ```
 
 Для облачной сборки после самостоятельной привязки к Expo: `eas build -p android --profile development`. Профиль `development-simulator` — для iOS Simulator, `preview` — release-APK для замеров, `production` — для стора.
@@ -49,7 +49,7 @@ npm start
 - docs/adr и docs/media — будущие ADR и материалы демонстрации.
 - AGENTS.md и CLAUDE.md — правила проекта: ядро пишешь сам, AI объясняет и делает ревью.
 
-Следующий шаг — [этап 1: system design](../training/06-websocket-demo-binance/06-websocket-demo-binance-part3.md) и четыре ADR до реализации ядра. Спецификации тестов ядра остаются в тренинге и добавляются на соответствующих этапах.
+Следующий шаг — [этап 1: system design](training/06-websocket-demo-binance/06-websocket-demo-binance-part3.md) и четыре ADR до реализации ядра. Спецификации тестов ядра остаются в тренинге и добавляются на соответствующих этапах.
 
 ## Git и CI
 

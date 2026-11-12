@@ -34,11 +34,56 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 76
         }
-      ]
+      ],
+      "expo-widgets",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      "expo-image",
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "ExpoWidgetsTarget",
+                  "bundleIdentifier": "io.github.yevhenjl.rnrealtimemarket.ExpoWidgetsTarget",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.io.github.yevhenjl.rnrealtimemarket"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "b1c7ce40-9965-4201-bce5-05b713b084d6"
+      }
+    },
+    "owner": "yevhen565",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b1c7ce40-9965-4201-bce5-05b713b084d6"
     }
   }
 }
