@@ -1,9 +1,9 @@
 ## Change
 
 ## Validation
-- [ ] npm run check
-- [ ] npx expo install --check
-- [ ] npm run doctor
+- [ ] bun run check
+- [ ] bunx expo install --check
+- [ ] bun run doctor
 - [ ] Native changes: rebuilt development client
 
 ## Learning
