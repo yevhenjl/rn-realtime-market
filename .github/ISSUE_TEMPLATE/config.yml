@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/yevhenjl/rn-realtime-market/security/advisories/new
+    about: Use GitHub private vulnerability reporting. Please do not open a public issue.
